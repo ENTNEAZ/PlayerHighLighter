@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "playhighlighter",
-  "version": "1.0.0",
+  "version": "1.0.1",
 
   "name": "PlayHighLighter",
   "description": "As we all know,All players can't be seen easily,so lighting up player is very important(but lighting players isn't a good choice XD)",

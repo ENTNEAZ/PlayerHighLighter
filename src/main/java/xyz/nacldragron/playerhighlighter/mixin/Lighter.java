@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(MinecraftClient.class)
 public class Lighter {
     @Inject(method = "hasOutline", at = @At(value = "RETURN"), cancellable = true)
-    private void checkPlayerEntity(Entity entity, CallbackInfoReturnable<Boolean> cir) {
+    private void checkWanderingTraderEntity(Entity entity, CallbackInfoReturnable<Boolean> cir) {
         if (!cir.getReturnValue()) {
             if (entity instanceof PlayerEntity){
                 cir.setReturnValue(true);

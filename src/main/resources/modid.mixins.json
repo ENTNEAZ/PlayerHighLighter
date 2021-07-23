@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "xyz.nacldragron.playerhighlighter.mixin",
+  "compatibilityLevel": "JAVA_16",
+  "mixins": [
+  ],
+  "client": [
+    "Lighter"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -6,6 +6,10 @@ Sometimes it is difficult to see the player when playing on the server, it is mo
 
 这个mod方便在服务器中发现其他玩家
 
+## dependence / 依赖
+
+[Fabric API](https://github.com/FabricMC/fabric)
+
 ## picture / 效果图
 
 ![](docs/1.png)
@@ -13,5 +17,5 @@ Sometimes it is difficult to see the player when playing on the server, it is mo
 
 ## License / 许可证
 
-GNU General Public License v3.0 / GPL3.0
+[GNU General Public License v3.0 / GPL3.0](LICENSE)
 

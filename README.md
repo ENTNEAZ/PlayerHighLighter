@@ -18,6 +18,7 @@ using key "comma" to control ON/OFF (able to change in key binding)
 
 ![](docs/1.png)
 
+![](docs/2.png)
 
 ## License / 许可证
 

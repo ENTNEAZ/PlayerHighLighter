@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "playhighlighter",
-  "version": "1.3.0",
+  "version": "1.3.1",
 
   "name": "PlayHighLighter",
   "description": "Lighting up your friend is not a good choice",
@@ -27,9 +27,9 @@
   ],
 
   "depends": {
-    "fabricloader": ">=0.14.6",
+    "fabricloader": ">=0.14.9",
     "fabric": "*",
-    "minecraft": "~1.19",
+    "minecraft": "~1.19.2",
     "java": ">=17"
   },
   "suggests": {

@@ -6,7 +6,8 @@
   "mixins": [
   ],
   "client": [
-    "Lighter"
+    "Lighter",
+    "ChatListener"
   ],
   "injectors": {
     "defaultRequire": 1

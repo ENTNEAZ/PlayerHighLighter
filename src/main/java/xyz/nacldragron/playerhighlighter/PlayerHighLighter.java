@@ -20,7 +20,7 @@ public class PlayerHighLighter implements ModInitializer {
 		));
 
 		ClientTickEvents.END_CLIENT_TICK.register(client -> {
-			while (Lighter.wasPressed()) {
+			while (Lighter.wasPressed() && client.player != null) {
 				if (Properties.isLighting) {
 					client.player.sendMessage(Text.of("PlayerHighLighter : §cOFF"), true);
 					Properties.isLighting = false;
@@ -29,11 +29,6 @@ public class PlayerHighLighter implements ModInitializer {
 					Properties.isLighting = true;
 				}
 			}
-		});
-
-		//get username when first join game
-		ClientTickEvents.END_CLIENT_TICK.register(client -> {
-				Properties.player = client.player;
 		});
 
 

@@ -10,23 +10,22 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import xyz.nacldragron.playerhighlighter.Util;
-import xyz.nacldragron.playerhighlighter.Properties;
 
 @Mixin(ChatHud.class)
 public class ChatListener {
-    @Inject(method = "logChatMessage", at = @At(value = "HEAD"), cancellable = false)
+    @Inject(method = "logChatMessage", at = @At(value = "HEAD"))
     public void checkChat(Text message, MessageIndicator indicator, CallbackInfo ci) {
         //check if the chat is asking my position
         String messageStr = message.getString().replaceAll("\r", "\\\\r").replaceAll("\n", "\\\\n");
-        if (Properties.player != null && Util.checkValidAskingPosition(messageStr)) {
+        if (Util.getPlayer() != null && Util.checkValidAskingPosition(messageStr)) {
             String s = Util.getPositionString();
-            Properties.player.sendChatMessage(s, Text.of(s));
+            Util.getPlayer().sendChatMessage(s, Text.of(s));
         }
 
         //check if someone is @ me
-        if (Properties.player != null && Util.checkValidAtMe(messageStr)) {
+        if (Util.getPlayer() != null && Util.checkValidAtMe(messageStr)) {
             // show a small title in client
-            Properties.player.sendMessage(Text.of("§e§lSomeone is @ you!"), true);
+            Util.getPlayer().sendMessage(Text.of("§e§lSomeone is @ you!"), true);
         }
     }
 }

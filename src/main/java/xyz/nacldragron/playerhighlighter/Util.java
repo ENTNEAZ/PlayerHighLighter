@@ -1,14 +1,22 @@
 package xyz.nacldragron.playerhighlighter;
 
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.network.ClientPlayerEntity;
+
 public class Util {
     public static String getUsername(){
         // get username
-        if(Properties.player != null)
+        if(Util.getPlayer() != null)
         {
-            return  Properties.player.getName().getString();
+            return Util.getPlayer().getName().getString();
         } else {
             return "";
         }
+    }
+
+    public static ClientPlayerEntity getPlayer(){
+        // get player
+        return MinecraftClient.getInstance().player;
     }
 
     public static boolean checkValidAskingPosition(String s){
@@ -24,10 +32,10 @@ public class Util {
     public static String getPositionString(){
         //return the position
         //e.g. [0,0,0] @ minecraft:overworld
-        int x = (int) Properties.player.getX();
-        int y = (int) Properties.player.getY();
-        int z = (int) Properties.player.getZ();
-        String dimension = Properties.player.getEntityWorld().getRegistryKey().getValue().toString();
+        int x = (int) Util.getPlayer().getX();
+        int y = (int) Util.getPlayer().getY();
+        int z = (int) Util.getPlayer().getZ();
+        String dimension = Util.getPlayer().getEntityWorld().getRegistryKey().getValue().toString();
         return "[" + x + "," + y + "," + z + "] @ " + dimension;
     }
 

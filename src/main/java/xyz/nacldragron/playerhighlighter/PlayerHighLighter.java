@@ -40,12 +40,12 @@ public class PlayerHighLighter implements ModInitializer {
 
 		ClientTickEvents.END_CLIENT_TICK.register(client -> {
 			while (responsePosition.wasPressed() && client.player != null) {
-				if (Properties.isResponsingPosition) {
+				if (Properties.isRespondingPosition) {
 					client.player.sendMessage(Text.of("RespondingPosition : §cOFF"), true);
-					Properties.isResponsingPosition = false;
+					Properties.isRespondingPosition = false;
 				} else {
 					client.player.sendMessage(Text.of("RespondingPosition : §aON"),true);
-					Properties.isResponsingPosition = true;
+					Properties.isRespondingPosition = true;
 				}
 			}
 		});

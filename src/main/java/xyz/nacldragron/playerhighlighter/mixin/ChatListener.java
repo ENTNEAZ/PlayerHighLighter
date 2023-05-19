@@ -9,6 +9,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import xyz.nacldragron.playerhighlighter.Properties;
 import xyz.nacldragron.playerhighlighter.Util;
 
 @Mixin(ChatHud.class)
@@ -17,13 +18,13 @@ public class ChatListener {
     public void checkChat(Text message, MessageIndicator indicator, CallbackInfo ci) {
         //check if the chat is asking my position
         String messageStr = message.getString().replaceAll("\r", "\\\\r").replaceAll("\n", "\\\\n");
-        if (Util.getPlayer() != null && Util.checkValidAskingPosition(messageStr)) {
+        if (Properties.isResponsingPosition && Util.getPlayer() != null && Util.checkValidAskingPosition(messageStr)) {
             String s = Util.getPositionString();
             Util.getPlayer().sendChatMessage(s, Text.of(s));
         }
 
         //check if someone is @ me
-        if (Util.getPlayer() != null && Util.checkValidAtMe(messageStr)) {
+        if (Properties.isResponsingAtMe && Util.getPlayer() != null && Util.checkValidAtMe(messageStr)) {
             // show a small title in client
             Util.getPlayer().sendMessage(Text.of("§e§lSomeone is @ you!"), true);
         }

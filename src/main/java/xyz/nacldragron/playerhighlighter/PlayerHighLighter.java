@@ -19,6 +19,13 @@ public class PlayerHighLighter implements ModInitializer {
 				"PlayerHighLighter" // The translation key of the keybinding's category.
 		));
 
+		KeyBinding responsePosition = KeyBindingHelper.registerKeyBinding(new KeyBinding(
+				"responsePosition", // The translation key of the keybinding's name
+				InputUtil.Type.KEYSYM, // The type of the keybinding, KEYSYM for keyboard, MOUSE for mouse.
+				GLFW.GLFW_KEY_EQUAL, // The keycode of the key
+				"PlayerHighLighter" // The translation key of the keybinding's category.
+		));
+
 		ClientTickEvents.END_CLIENT_TICK.register(client -> {
 			while (Lighter.wasPressed() && client.player != null) {
 				if (Properties.isLighting) {
@@ -27,6 +34,18 @@ public class PlayerHighLighter implements ModInitializer {
 				} else {
 					client.player.sendMessage(Text.of("PlayerHighLighter : §aON"),true);
 					Properties.isLighting = true;
+				}
+			}
+		});
+
+		ClientTickEvents.END_CLIENT_TICK.register(client -> {
+			while (responsePosition.wasPressed() && client.player != null) {
+				if (Properties.isResponsingPosition) {
+					client.player.sendMessage(Text.of("RespondingPosition : §cOFF"), true);
+					Properties.isResponsingPosition = false;
+				} else {
+					client.player.sendMessage(Text.of("RespondingPosition : §aON"),true);
+					Properties.isResponsingPosition = true;
 				}
 			}
 		});

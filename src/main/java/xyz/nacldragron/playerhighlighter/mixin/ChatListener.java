@@ -20,7 +20,7 @@ public class ChatListener {
         String messageStr = message.getString().replaceAll("\r", "\\\\r").replaceAll("\n", "\\\\n");
         if (Properties.isRespondingPosition && Util.getPlayer() != null && Util.checkValidAskingPosition(messageStr)) {
             String s = Util.getPositionString();
-            Util.getPlayer().sendChatMessage(s, Text.of(s));
+            Util.getPlayer().networkHandler.sendChatMessage(s);
         }
 
         //check if someone is @ me

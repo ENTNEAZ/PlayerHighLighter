@@ -1,4 +1,4 @@
-package xyz.nacldragron.playerhighlighter.mixin;
+package top.nacldragron.playerhighlighter.mixin;
 
 
 import net.minecraft.client.gui.hud.ChatHud;
@@ -9,8 +9,8 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import xyz.nacldragron.playerhighlighter.Properties;
-import xyz.nacldragron.playerhighlighter.Util;
+import top.nacldragron.playerhighlighter.Properties;
+import top.nacldragron.playerhighlighter.Util;
 
 @Mixin(ChatHud.class)
 public class ChatListener {

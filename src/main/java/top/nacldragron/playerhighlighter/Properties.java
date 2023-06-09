@@ -1,4 +1,4 @@
-package xyz.nacldragron.playerhighlighter;
+package top.nacldragron.playerhighlighter;
 
 public class Properties {
     public static boolean isLighting = true;

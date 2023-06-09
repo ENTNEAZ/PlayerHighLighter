@@ -1,4 +1,4 @@
-package xyz.nacldragron.playerhighlighter;
+package top.nacldragron.playerhighlighter;
 
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerEntity;

@@ -18,13 +18,13 @@ public class ChatListener {
     public void checkChat(Text message, MessageIndicator indicator, CallbackInfo ci) {
         //check if the chat is asking my position
         String messageStr = message.getString().replaceAll("\r", "\\\\r").replaceAll("\n", "\\\\n");
-        if (Properties.isRespondingPosition && Util.getPlayer() != null && Util.checkValidAskingPosition(messageStr)) {
+        if (Properties.isRespondingPosition() && Util.getPlayer() != null && Util.checkValidAskingPosition(messageStr)) {
             String s = Util.getPositionString();
             Util.getPlayer().networkHandler.sendChatMessage(s);
         }
 
         //check if someone is @ me
-        if (Properties.isRespondingAtMe && Util.getPlayer() != null && Util.checkValidAtMe(messageStr)) {
+        if (Properties.isRespondingAtMe() && Util.getPlayer() != null && Util.checkValidAtMe(messageStr)) {
             // show a small title in client
             Util.getPlayer().sendMessage(Text.of("§e§lSomeone is @ you!"), true);
         }

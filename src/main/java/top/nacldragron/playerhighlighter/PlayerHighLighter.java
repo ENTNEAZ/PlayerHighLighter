@@ -28,29 +28,30 @@ public class PlayerHighLighter implements ModInitializer {
 
 		ClientTickEvents.END_CLIENT_TICK.register(client -> {
 			while (Lighter.wasPressed() && client.player != null) {
-				if (Properties.isLighting) {
+				if (Properties.isLighting()) {
 					client.player.sendMessage(Text.of("PlayerHighLighter : §cOFF"), true);
-					Properties.isLighting = false;
+					Properties.setLighting(false);
 				} else {
 					client.player.sendMessage(Text.of("PlayerHighLighter : §aON"),true);
-					Properties.isLighting = true;
+					Properties.setLighting(true);
 				}
 			}
 		});
 
 		ClientTickEvents.END_CLIENT_TICK.register(client -> {
 			while (responsePosition.wasPressed() && client.player != null) {
-				if (Properties.isRespondingPosition) {
+				if (Properties.isRespondingPosition()) {
 					client.player.sendMessage(Text.of("RespondingPosition : §cOFF"), true);
-					Properties.isRespondingPosition = false;
+					Properties.setRespondingPosition(false);
 				} else {
 					client.player.sendMessage(Text.of("RespondingPosition : §aON"),true);
-					Properties.isRespondingPosition = true;
+					Properties.setRespondingPosition(true);
 				}
 			}
 		});
 
-
+		// init config
+		Properties.init();
 
 
 	}

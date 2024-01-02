@@ -14,7 +14,7 @@ import top.nacldragron.playerhighlighter.Properties;
 public class Lighter {
     @Inject(method = "hasOutline", at = @At(value = "RETURN"), cancellable = true)
     private void checkPlayerEntity(Entity entity, CallbackInfoReturnable<Boolean> cir) {
-        if (!cir.getReturnValue() && Properties.isLighting) {
+        if (!cir.getReturnValue() && Properties.isLighting()) {
             if (entity instanceof PlayerEntity){
                 cir.setReturnValue(true);
             }

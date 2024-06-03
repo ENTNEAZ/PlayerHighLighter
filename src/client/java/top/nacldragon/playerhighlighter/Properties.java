@@ -1,4 +1,4 @@
-package top.nacldragron.playerhighlighter;
+package top.nacldragon.playerhighlighter;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;

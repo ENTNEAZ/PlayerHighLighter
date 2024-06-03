@@ -19,7 +19,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "top.nacldragron.playerhighlighter.PlayerHighLighter"
+      "top.nacldragon.playerhighlighter.PlayerHighLighter"
     ]
   },
   "mixins": [
@@ -29,7 +29,7 @@
   "depends": {
     "fabricloader": ">=0.14.21",
     "fabric": "*",
-    "minecraft": "~1.20",
+    "minecraft": ">=1.20",
     "java": ">=17"
   },
   "suggests": {

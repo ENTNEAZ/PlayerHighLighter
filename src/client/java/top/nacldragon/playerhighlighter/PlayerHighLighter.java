@@ -1,4 +1,4 @@
-package top.nacldragron.playerhighlighter;
+package top.nacldragon.playerhighlighter;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;

@@ -1,7 +1,7 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "top.nacldragron.playerhighlighter.mixin",
+  "package": "top.nacldragon.playerhighlighter.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
   ],

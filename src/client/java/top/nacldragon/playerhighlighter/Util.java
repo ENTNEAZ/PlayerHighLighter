@@ -35,7 +35,7 @@ public class Util {
         int x = (int) Util.getPlayer().getX();
         int y = (int) Util.getPlayer().getY();
         int z = (int) Util.getPlayer().getZ();
-        String dimension = Util.getPlayer().getEntityWorld().getRegistryKey().getValue().toString();
+        String dimension = Util.getPlayer().getWorld().getRegistryKey().getValue().toString();
         return "[" + x + "," + y + "," + z + "] @ " + dimension;
     }
 
